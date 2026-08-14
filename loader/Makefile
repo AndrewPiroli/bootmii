@@ -6,8 +6,6 @@ TARGET_STRIPPED = bootmii.elf
 OBJS = start.o main.o vsprintf.o string.o gecko.o memory.o memory_asm.o \
 	sdhc.o sdmmc.o utils.o ff.o diskio.o lcd.o version.o
 
-CFLAGS = -mbig-endian -mthumb -march=armv5t
-CFLAGS += -fomit-frame-pointer -ffunction-sections
 CFLAGS += -Wall -Wextra -Os -pipe
 
 # uncomment to enabled LCD debug output

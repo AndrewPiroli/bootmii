@@ -24,6 +24,7 @@ Copyright (C) 2009		John Kelley <wiidev@kelley.ca>
 #include "ff.h"
 #include "lcd.h"
 #include "gpio.h"
+#include "start.h"
 
 #define BOOT_FILE "/bootmii/armboot.bin"
 
@@ -255,6 +256,7 @@ void *_main(void *base)
 
 	gecko_puts("Copyright (C) 2008-2010 Team Twiizers.\n");
 	gecko_puts("Licensed under the GNU GPL version 2.\n");
+	gecko_puts("Modified!. Build by GCC " __VERSION__ " on " __TIMESTAMP__"\n");
 
 	printhdr(hdr);
 

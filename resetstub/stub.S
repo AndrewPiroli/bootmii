@@ -9,6 +9,7 @@ Copyright (C) 2008, 2009	Sven Peter <sven@svenpeter.dev>
 */
 
 .global _start
+.type _start, %function
 
 .arm
 _start:

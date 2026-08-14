@@ -17,7 +17,9 @@ Copyright (C) 2008, 2009	Hector Martin "marcan" <marcan@marcan.st>
 .extern __bss_end
 .extern __stack_addr
 .globl _start
+.type _start, %function
 .globl debug_output
+.type debug_output, %function
 
 .section .init
 
@@ -75,4 +77,5 @@ debug_output:
 	@ store back
 	str	r2, [r3, #0xe0]
 	bx	lr
+.size debug_output, . - debug_output
 

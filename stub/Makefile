@@ -18,7 +18,7 @@ $(TARGET_BIN): $(TARGET)
 
 loader.o : ../loader/bootmii.elf
 	@echo  "  BIN2O     $@"
-	@$(BIN2S) -a 32 $< | $(AS) -o $(@)
+	@$(BIN2S) -a 32 $< | $(AS) -mbig-endian -o $(@)
 
 clean: myclean
 

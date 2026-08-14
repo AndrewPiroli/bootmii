@@ -14,10 +14,10 @@ Not included:
 
 * boot2-style-wad packaging stuff
 * PyWii (see hbc)
-* UI/PPC side (CE1LING_CAT)
+* UI/PPC side (CE1LING\_CAT)
 * Installer
 
-Note that the code in this repository may differ from the source code used to
+Note that the code in this repository differs from the source code used to
 build the official version of BootMii.
 
 This code is released with no warranty, and has only been build tested.
@@ -26,10 +26,7 @@ irresponsible person and we will forever hate you.
 
 ## Build instructions
 
-You need armeb-eabi cross compilers. Same build setup as
-[mini](https://github.com/fail0verflow/mini). See
-[bootmii-utils](https://github.com/fail0verflow/bootmii-utils) for some outdated
-toolchain build scripts. Type `make` to compile. Good luck.
+Install devkitARM
 
 Output is at `bootmii.bin`, which is the main `armboot.bin` style executable
 for BootMii-as-IOS, with a dummy reset stub as payload. Installation as boot2

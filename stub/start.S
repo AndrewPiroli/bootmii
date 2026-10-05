@@ -98,7 +98,7 @@ done_bss:
 	@ _main returned! Go to whatever address it returned...
 	mov	r1, r0
 	mov	r0, r4
-	mov	pc, r1
+	bx	r1
 
 _is_reloced:
 	.long 0
@@ -113,21 +113,22 @@ memctrl_do_sub_sub_poke:
 	ldr		r0, =0x162	@ reg_data
 	mov		r1, #1		@ data
 	bl		memctrl_sub_poke
-	ldmia	sp!, {pc}
+	ldmia	sp!, {lr}
+	bx	lr
 
 memctrl_sub_poke:
 	ldr		r2, =0xD8B4000
 	strh	r0, [r2, #0x74] @ reg_address <= address
 	ldrh	r0, [r2, #0x74] @ read reg_address back
 	strh	r1, [r2, #0x76] @ reg_data <= data
-	mov		pc, lr
+	bx		lr
 
 memctrl_sub_peek:
 	ldr		r2, =0xD8B4000
 	strh	r0, [r2, #0x74] @ reg_address <= address
 	ldrh	r0, [r2, #0x74] @ read reg_address back
 	ldrh	r0, [r2, #0x76] @ data <= reg_data
-	mov		pc, lr
+	bx		lr
 
 .pool
 

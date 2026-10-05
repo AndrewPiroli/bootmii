@@ -56,11 +56,10 @@ done_bss:
 	bl	debug_output
 	@ take the plunge
 	mov	r0, r4
-	ldr	r1, =_main+1
-	mov	lr, pc
-	bx	r1
+	ldr	r1, =_main
+	blx	r1
 	@ _main returned! Go to whatever address it returned...
-	mov	pc, r0
+	bx	r0
 
 .pool
 
